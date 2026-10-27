@@ -1,0 +1,448 @@
+﻿
+=== 2026-10-27T02:36:59.2403783Z | 20261027T023652-a9b970e7 | 000001 | STARTUP ===
+La Plata West Signal Watch v0.31
+Build=0.31.0.0; CLR=2.0.50727.8806; OS=Microsoft Windows NT 6.1.7601 Service Pack 1
+Manual boxes (color reference coordinates): M2=default; M1=default; Search=automatic; Measure=automatic
+Export/startup UTC=2026-10-27T02:36:59.2343780Z
+Source update interval approximately 60 seconds; polls and fresh-image confirmation use newly downloaded source bytes.
+Poll=60s; stale=240s; CHECK IMAGE=4 fresh consecutive frames; scene_min=0.6800; day_sky_max=35.00; on_fraction=0.003000; off_fraction=0.001000; red_min=30
+Base region=x=0.58500, y=0.19000, w=0.18000, h=0.10000
+Sound=True; Toast=True
+
+Active reference index 0=supplied-off.png; index 1=curve-view.jpg
+decisions/: UTC decision records, measurements, gates, confirmation counts, and alert/toast reasons. Sessions have unique IDs.
+frames/: exact downloaded source bytes, linked by source_frame and SHA256 in decisions. Duplicates reuse a frame. TEST mode is marked.
+references/: supplied scene references and any saved OFF reference. Reference index 0 is the active OFF reference; index 1 is the supplied curve scene when loaded.
+Retention: latest 60 unique snapshots, capped at 20 MiB; latest 6 decision logs rotating near 4 MiB each. Older records may reference frames already expired.
+Every confirmed status transition can toast. Initial baseline and unchanged status do not toast. Pending CHECK IMAGE does not toast; 4 fresh consecutive uncertain images confirm it.
+WEST CURVE TRAIN, M2 TRAIN and M1 TRAIN are dashboard-only labels. WEST CURVE TRAIN requires a located bright-obstruction gate and new narrow or sparse branched white light intersecting the registered curve signal area. Faint/different color alone cannot produce it. White-shape acceptance/rejection is logged. It does not infer travel direction from a still image. M1 and M2 use the same wider-picture foreground comparison against labeled examples, aligned using separate static background landmarks. Train appearance never depends on the signal ROI, signal lock, or a red signal reflection. Strong matches require similarity >=0.78 and M1/M2 separation >=0.06. A second path permits similarity >=0.70 only with separation >=0.20, winning background score >=0.90 and >=300 foreground pixels. Both paths retain scene and foreground-extent checks. These are similarity thresholds, not recognition probabilities. Signal state, confirmation count and toast text are unchanged.
+Daylight requires a confirmed scene, a bright registered sky patch, and a solar-clock elevation of at least -3 degrees at La Plata using PC UTC time. Unconfirmed camera views display PTZ OUT OF RANGE and retain CHECK IMAGE confirmation semantics. The printed timestamp is never read.
+Sound requests cannot prove audible playback. Daylight is silent. No OCR or camera timestamp recognition. Age uses HTTP Last-Modified and duplicate bytes.
+Background scene matching relocates the search after pan/zoom using at least two matching landmark patches. Show boxes / Hide boxes toggles all debugging outlines and M1/M2 sample labels, including the adjacent actual color samples and search/measurement outlines. Hidden by default; preference is saved. Recognition continues while hidden. Yellow watch box includes nearby upper/lower groups; inner analysis area retains established glare/change gates. Color quadrant counts do not identify aspects, heads, or M1/M2. The separate experimental color bar uses user-labeled M2-left/M1-right zones with independent scene registration. Colors are reflected-color estimates; upper/lower head order is intentionally not inferred. Color readings do not change alert state, confirmation, sound, blink or toast. Polling is fixed at 60 seconds.
+This ZIP contains camera images and diagnostic details. Review it before sharing. Export stays on your computer.
+Startup note: 
+
+=== 2026-10-27T02:37:00.4814493Z | 20261027T023652-a9b970e7 | 000003 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T023659622-20261027T023652-a9b970e7-000002.jpg
+source_sha256_base64=+Dptz8LG18L7Ijs8RfibOm7+6rErWiYPHUZC2BcpOD8=; source_dimensions=854x480
+polled_utc=2026-10-27T02:36:59.6143997Z; server_modified_utc=2026-10-27T02:36:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:36:59.6184000Z; stale=False; stale_limit_seconds=240
+raw_state=CHECK IMAGE; effective_image_state=CHECK IMAGE; gate=bright_at_night
+confirmed_before=; confirmed_after=; last_signal=
+dashboard_label=CHECK IMAGE (1/4); display labels do not change state or toast
+check_count_before=0; check_count_after=1; required=4; pending=True
+reason=Unexpected brightness at night; inspect the camera framing or lighting.
+sky=50.949 (day > 35.000); scene=0.69595 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.9512
+analysis_utc=2026-10-27T02:36:59.6264004Z; La_Plata_sun_elevation=-38.804; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.61000, y=0.21222, w=0.18000, h=0.10000; sample_dimensions=0x0
+search_boxes_shown=False; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.59000, y=0.20222, w=0.22000, h=0.12000; color_watch_region=x=0.59882, y=0.25573, w=0.13050, h=0.11116; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=0; red_fraction=0.000000; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=0; minimum_pattern_pixels=0; reflection_found=False; ambiguous=False; bright_pixels=0; bright_limit=0.00
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=0, 0, 0, 0; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=False; train_scene_score=-1.00000; train_body_pixels=0; train_span=0,0; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=background_not_confirmed; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=current-view background unconfirmed; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+color_fit_method=reacquiring; color_fit_scale=1.0100; color_fit_shift=4.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.62404; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.81290; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=?; decision=signal visibility unconfirmed / foreground obstruction; R/G/Y pixels=64/164/0; weights=11.95/15.84/0.00; region={X=0.631,Y=0.293847,Width=0.03217699,Height=0.03493711}; obstruction_pixels=1558/1558
+M1_color=?; decision=signal visibility unconfirmed / foreground obstruction; R/G/Y pixels=41/139/0; weights=6.18/14.53/0.00; region={X=0.6649647,Y=0.293847,Width=0.03217699,Height=0.03493711}; obstruction_pixels=1538/1558
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: CHECK IMAGE pending 1/4; sound=not requested; toast=suppressed: CHECK IMAGE pending 1/4 (fresh frame)
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:38:00.4468792Z | 20261027T023652-a9b970e7 | 000005 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T023759873-20261027T023652-a9b970e7-000004.jpg
+source_sha256_base64=3OxhCGkMjeaUuw0ltQpDhuJ3uLyOTMNBQutmmbicfJg=; source_dimensions=854x480
+polled_utc=2026-10-27T02:37:59.8738464Z; server_modified_utc=2026-10-27T02:37:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:37:59.8738464Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=1; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=2.217 (day > 35.000); scene=0.99487 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.9804
+analysis_utc=2026-10-27T02:37:59.8768465Z; La_Plata_sun_elevation=-38.987; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.61137, y=0.29167, w=0.07000, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.53637, y=0.25146, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=89; red_fraction=0.083804; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=112; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=30; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=7, 28, 14, 63; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99253; train_body_pixels=58; train_span=149,60; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=insufficient_car_extent; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=insufficient current-view car extent; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.78476; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.90166; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=79/0/0; weights=10.36/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=63/0/0; weights=7.85/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: startup baseline; sound=not requested; toast=suppressed: startup baseline
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:39:00.9183379Z | 20261027T023652-a9b970e7 | 000007 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T023900230-20261027T023652-a9b970e7-000006.jpg
+source_sha256_base64=pFmTX5vr1bPf8Df8/iqrOQpMcvvzFxkDiNRLL9eP7iM=; source_dimensions=854x480
+polled_utc=2026-10-27T02:39:00.2292985Z; server_modified_utc=2026-10-27T02:38:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:39:00.2302986Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=2.228 (day > 35.000); scene=0.99520 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.9805
+analysis_utc=2026-10-27T02:39:00.2312986Z; La_Plata_sun_elevation=-39.169; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.61078, y=0.29167, w=0.07000, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=False; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.53578, y=0.25146, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=102; red_fraction=0.096045; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=111; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=28; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=6, 39, 14, 52; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99281; train_body_pixels=54; train_span=149,59; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=insufficient_car_extent; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=insufficient current-view car extent; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.78377; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.90087; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=83/0/0; weights=11.40/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=60/0/0; weights=6.98/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:40:01.2277874Z | 20261027T023652-a9b970e7 | 000009 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T024000577-20261027T023652-a9b970e7-000008.jpg
+source_sha256_base64=GpOxDZiDxD8wN9uCh0XWvhl5Ez45hY1OFaqC+yXV+i8=; source_dimensions=854x480
+polled_utc=2026-10-27T02:40:00.5777502Z; server_modified_utc=2026-10-27T02:39:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:40:00.5777502Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=2.211 (day > 35.000); scene=0.99551 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.9804
+analysis_utc=2026-10-27T02:40:00.5787503Z; La_Plata_sun_elevation=-39.352; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.60763, y=0.29167, w=0.09972, h=0.04167; sample_dimensions=854x480
+search_boxes_shown=False; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.54749, y=0.25250, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=130; red_fraction=0.076471; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=130; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=30; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=27, 23, 47, 33; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99333; train_body_pixels=56; train_span=149,59; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=insufficient_car_extent; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=insufficient current-view car extent; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.78243; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.89954; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=113/0/0; weights=14.77/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=55/0/0; weights=7.41/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:41:02.5242934Z | 20261027T023652-a9b970e7 | 000011 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T024100968-20261027T023652-a9b970e7-000010.jpg
+source_sha256_base64=EdB4a19kCsJ2LtjBKlpcnN9b0FqaLWEQonif/QbLfp0=; source_dimensions=854x480
+polled_utc=2026-10-27T02:41:00.9682044Z; server_modified_utc=2026-10-27T02:40:14.0000000Z
+same_bytes_since_utc=2026-10-27T02:41:00.9682044Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=11.006 (day > 35.000); scene=0.77363 (minimum 0.68000); reference_index=1; shift_thumbnail=5,2
+location_found=True; location_method=reacquired; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.7781
+analysis_utc=2026-10-27T02:41:00.9702045Z; La_Plata_sun_elevation=-39.534; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.61700, y=0.28750, w=0.11728, h=0.04583; sample_dimensions=854x480
+search_boxes_shown=False; search_overlay_region=x=0.45625, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.56564, y=0.25042, w=0.22000, h=0.12000; color_watch_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; search_region=x=0.45625, y=0.13222, w=0.46000, h=0.26000
+red_pixels=304; red_fraction=0.138182; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=1096; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=3; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=83, 17, 75, 492; yellow=0, 0, 0, 6
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=False; train_scene_score=-1.00000; train_body_pixels=0; train_span=0,0; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=background_not_confirmed; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=current-view train pattern not confirmed; current_view_m1_similarity=0.13663; current_view_m2_similarity=0.10230
+color_fit_method=searching; color_fit_scale=0.9700; color_fit_shift=-9.000,-11.000; color_fit_landmarks=0; color_fit_patch_minimum=0.00000; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=False; color_scene_score=0.92103; color_scene_minimum=0.74; color_decision=color reference view not confirmed; dashed boxes show candidate positions, not active color samples
+M2_color=?; decision=not sampled: color-reference alignment unconfirmed; R/G/Y pixels=0/0/0; weights=0.00/0.00/0.00; region={X=0.52575,Y=0.277369,Width=0.03090265,Height=0.03355346}; obstruction_pixels=0/0
+M1_color=?; decision=not sampled: color-reference alignment unconfirmed; R/G/Y pixels=0/0/0; weights=0.00/0.00/0.00; region={X=0.5583695,Y=0.277369,Width=0.03090265,Height=0.03355346}; obstruction_pixels=0/0
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:41:45.6137580Z | 20261027T023652-a9b970e7 | 000013 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T024145362-20261027T023652-a9b970e7-000012.jpg
+source_sha256_base64=WUGEOuozWxEXJYepNFQm+M7TEJr+Bp60h1hmmW/sX2M=; source_dimensions=854x480
+polled_utc=2026-10-27T02:41:45.3617435Z; server_modified_utc=2026-10-27T02:41:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:41:45.3617435Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=M1 TRAIN; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=0.832 (day > 35.000); scene=0.84635 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=2; minimum_patch_score=0.9344
+analysis_utc=2026-10-27T02:41:45.3647437Z; La_Plata_sun_elevation=-39.668; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.59475, y=0.19375, w=0.08333, h=0.04375; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.52642, y=0.15563, w=0.22000, h=0.12000; color_watch_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=273; red_fraction=0.192254; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=2264; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=0; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=48, 62, 80, 100; yellow=0, 0, 0, 0
+train_display_cue=M1 TRAIN; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.98312; train_body_pixels=1267; train_span=152,67; train_m1_score=0.84431; train_m2_score=0.72888; train_decision=whole_picture_car_pattern; train_example=train-m1.png; train_acceptance_mode=strong_pattern; train_winning_scene_score=0.98312; train_winning_body_pixels=1267
+additional_m2_decision=not_evaluated; additional_m2_similarity=0.00000; baseline_m1=0.84431; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=not_evaluated; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:42:34.4675522Z | 20261027T023652-a9b970e7 | 000015 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T024233289-20261027T023652-a9b970e7-000014.jpg
+source_sha256_base64=mNmf5vqi5nczr+AvzQAZlyBz+zlIM6AzDogCod3AqGE=; source_dimensions=854x480
+polled_utc=2026-10-27T02:42:33.2884848Z; server_modified_utc=2026-10-27T02:42:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:42:33.2894849Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=5.763 (day > 35.000); scene=0.97271 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=reacquired; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.7915
+analysis_utc=2026-10-27T02:42:33.2904849Z; La_Plata_sun_elevation=-39.812; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.59615, y=0.19583, w=0.07000, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.52115, y=0.15563, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=105; red_fraction=0.098870; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=169; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=0; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=22, 17, 26, 41; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99055; train_body_pixels=266; train_span=149,67; train_m1_score=0.36544; train_m2_score=0.30349; train_decision=car_pattern_not_confirmed; train_example=train-m1-tanks.png; train_acceptance_mode=not_accepted; train_winning_scene_score=0.99055; train_winning_body_pixels=266
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.36544; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=current-view train pattern not confirmed; current_view_m1_similarity=0.49462; current_view_m2_similarity=0.39256
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.77727; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.89822; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=75/0/0; weights=11.50/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=?; decision=too little color evidence; R/G/Y pixels=0/0/0; weights=0.00/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:42:40.0478714Z | 20261027T023652-a9b970e7 | 000016 | IMAGE ===
+mode=LIVE; fresh_pixels=False; source_frame=frames/20261027T024233289-20261027T023652-a9b970e7-000014.jpg
+source_sha256_base64=mNmf5vqi5nczr+AvzQAZlyBz+zlIM6AzDogCod3AqGE=; source_dimensions=854x480
+polled_utc=2026-10-27T02:42:38.8518030Z; server_modified_utc=2026-10-27T02:42:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:42:33.2894849Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=5.763 (day > 35.000); scene=0.97271 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=reacquired; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.7915
+analysis_utc=2026-10-27T02:42:38.8518030Z; La_Plata_sun_elevation=-39.829; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.59615, y=0.19583, w=0.07000, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.52115, y=0.15563, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=105; red_fraction=0.098870; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=169; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=0; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=22, 17, 26, 41; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99055; train_body_pixels=266; train_span=149,67; train_m1_score=0.36544; train_m2_score=0.30349; train_decision=car_pattern_not_confirmed; train_example=train-m1-tanks.png; train_acceptance_mode=not_accepted; train_winning_scene_score=0.99055; train_winning_body_pixels=266
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.36544; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=current-view train pattern not confirmed; current_view_m1_similarity=0.49462; current_view_m2_similarity=0.39256
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.77727; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.89822; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=75/0/0; weights=11.50/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=?; decision=too little color evidence; R/G/Y pixels=0/0/0; weights=0.00/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:42:48.8093725Z | 20261027T023652-a9b970e7 | 000017 | IMAGE ===
+mode=LIVE; fresh_pixels=False; source_frame=frames/20261027T024233289-20261027T023652-a9b970e7-000014.jpg
+source_sha256_base64=mNmf5vqi5nczr+AvzQAZlyBz+zlIM6AzDogCod3AqGE=; source_dimensions=854x480
+polled_utc=2026-10-27T02:42:47.5783021Z; server_modified_utc=2026-10-27T02:42:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:42:33.2894849Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=5.763 (day > 35.000); scene=0.97271 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=reacquired; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.7915
+analysis_utc=2026-10-27T02:42:47.5783021Z; La_Plata_sun_elevation=-39.855; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.59615, y=0.19583, w=0.07000, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.52115, y=0.15563, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=105; red_fraction=0.098870; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=169; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=0; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=22, 17, 26, 41; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99055; train_body_pixels=266; train_span=149,67; train_m1_score=0.36544; train_m2_score=0.30349; train_decision=car_pattern_not_confirmed; train_example=train-m1-tanks.png; train_acceptance_mode=not_accepted; train_winning_scene_score=0.99055; train_winning_body_pixels=266
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.36544; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=current-view train pattern not confirmed; current_view_m1_similarity=0.49462; current_view_m2_similarity=0.39256
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.77727; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.89822; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=75/0/0; weights=11.50/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=?; decision=too little color evidence; R/G/Y pixels=0/0/0; weights=0.00/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:42:55.0187277Z | 20261027T023652-a9b970e7 | 000018 | IMAGE ===
+mode=LIVE; fresh_pixels=False; source_frame=frames/20261027T024233289-20261027T023652-a9b970e7-000014.jpg
+source_sha256_base64=mNmf5vqi5nczr+AvzQAZlyBz+zlIM6AzDogCod3AqGE=; source_dimensions=854x480
+polled_utc=2026-10-27T02:42:53.8486608Z; server_modified_utc=2026-10-27T02:42:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:42:33.2894849Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=5.763 (day > 35.000); scene=0.97271 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=reacquired; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.7915
+analysis_utc=2026-10-27T02:42:53.8486608Z; La_Plata_sun_elevation=-39.874; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.59615, y=0.19583, w=0.07000, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.52115, y=0.15563, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=105; red_fraction=0.098870; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=169; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=0; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=22, 17, 26, 41; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99055; train_body_pixels=266; train_span=149,67; train_m1_score=0.36544; train_m2_score=0.30349; train_decision=car_pattern_not_confirmed; train_example=train-m1-tanks.png; train_acceptance_mode=not_accepted; train_winning_scene_score=0.99055; train_winning_body_pixels=266
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.36544; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=current-view train pattern not confirmed; current_view_m1_similarity=0.49462; current_view_m2_similarity=0.39256
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.77727; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.89822; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=75/0/0; weights=11.50/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=?; decision=too little color evidence; R/G/Y pixels=0/0/0; weights=0.00/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:43:53.4000669Z | 20261027T023652-a9b970e7 | 000020 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T024352841-20261027T023652-a9b970e7-000019.jpg
+source_sha256_base64=dvqExjdZz7IHKqXx6lWoP8eQnuwYpyNh5JrUhWfPzhE=; source_dimensions=854x480
+polled_utc=2026-10-27T02:43:52.8400349Z; server_modified_utc=2026-10-27T02:43:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:43:52.8410349Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=2.376 (day > 35.000); scene=0.99592 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.9824
+analysis_utc=2026-10-27T02:43:52.8420350Z; La_Plata_sun_elevation=-40.051; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.61583, y=0.29167, w=0.08918, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.55042, y=0.25146, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=111; red_fraction=0.081140; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=114; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=36; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=20, 10, 42, 42; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99335; train_body_pixels=57; train_span=148,60; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=insufficient_car_extent; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=insufficient current-view car extent; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.77503; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.89911; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=85/0/0; weights=12.37/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=65/0/0; weights=8.85/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:44:53.7215171Z | 20261027T023652-a9b970e7 | 000022 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T024453175-20261027T023652-a9b970e7-000021.jpg
+source_sha256_base64=PTNd4dCfF5ZwCQ5hEn2ln3klNwZ1UiwOWztzhgkhW1U=; source_dimensions=854x480
+polled_utc=2026-10-27T02:44:53.1754859Z; server_modified_utc=2026-10-27T02:44:09.0000000Z
+same_bytes_since_utc=2026-10-27T02:44:53.1754859Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=2.251 (day > 35.000); scene=0.99574 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.9816
+analysis_utc=2026-10-27T02:44:53.1764859Z; La_Plata_sun_elevation=-40.232; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.61254, y=0.29167, w=0.07000, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.53754, y=0.25146, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=96; red_fraction=0.090395; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=114; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=33; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=10, 23, 21, 60; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99280; train_body_pixels=59; train_span=148,60; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=insufficient_car_extent; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=insufficient current-view car extent; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.77531; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.90182; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=90/0/0; weights=12.29/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=69/0/0; weights=7.96/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+
+
+=== 2026-10-27T02:45:54.2229776Z | 20261027T023652-a9b970e7 | 000024 | IMAGE ===
+mode=LIVE; fresh_pixels=True; source_frame=frames/20261027T024553539-20261027T023652-a9b970e7-000023.jpg
+source_sha256_base64=WDwrKGSLFilIGsKbeNmz/ByY61IFfJhV2d6/smhFUig=; source_dimensions=854x480
+polled_utc=2026-10-27T02:45:53.5399385Z; server_modified_utc=2026-10-27T02:45:21.0000000Z
+same_bytes_since_utc=2026-10-27T02:45:53.5399385Z; stale=False; stale_limit_seconds=240
+raw_state=SIGNALS ON; effective_image_state=SIGNALS ON; gate=reflection_on
+confirmed_before=SIGNALS ON; confirmed_after=SIGNALS ON; last_signal=SIGNALS ON
+dashboard_label=SIGNALS ON; display labels do not change state or toast
+check_count_before=0; check_count_after=0; required=4; pending=False
+reason=Red rail reflection found in the located west-curve area.
+sky=1.846 (day > 35.000); scene=0.99624 (minimum 0.68000); reference_index=1; shift_thumbnail=4,2
+location_found=True; location_method=tracking; scene_scale=1.0000; matched_landmarks=3; minimum_patch_score=0.9820
+analysis_utc=2026-10-27T02:45:53.5419386Z; La_Plata_sun_elevation=-40.413; daylight_time_allowed=False; daylight_min_elevation=-3
+analysis_region=x=0.61583, y=0.29167, w=0.08918, h=0.03958; sample_dimensions=854x480
+search_boxes_shown=True; search_overlay_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000; signal_watch_region=x=0.55042, y=0.25146, w=0.22000, h=0.12000; color_watch_region=x=0.59996, y=0.24825, w=0.12791, h=0.10896; search_region=x=0.45000, y=0.13222, w=0.46000, h=0.26000
+red_pixels=109; red_fraction=0.079678; on_min=0.003000; off_max=0.001000; red_minimum=30; other_color_pixels=0 (OFF requires <4)
+search_red_pixels=110; minimum_pattern_pixels=8; reflection_found=True; ambiguous=False; bright_pixels=37; bright_limit=590.28
+area_change=0.00000; change_limit=0.06; changed=False; area_alert_latched=False
+watch_quadrants=top-left, top-right, bottom-left, bottom-right; red=31, 10, 39, 30; yellow=0, 0, 0, 0
+train_display_cue=; white_rail_pixels=0; white_rail_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; curve_white_pixels=0
+white_decision=not_evaluated; white_pattern=; white_search_region=x=0.00000, y=0.00000, w=0.00000, h=0.00000; white_search_pixels=0; white_components=0; white_rejected_shape=0; white_rejected_boundary=0; white_rejected_residual=0; white_rejected_location=0; white_fill=0.00000; white_residual=0.00000; white_slope=0.00000
+train_scope=whole_picture; train_scene_found=True; train_scene_score=0.99346; train_body_pixels=50; train_span=148,59; train_m1_score=0.00000; train_m2_score=0.00000; train_decision=insufficient_car_extent; train_example=; train_acceptance_mode=not_accepted; train_winning_scene_score=-1.00000; train_winning_body_pixels=0
+additional_m2_decision=no qualifying additional match; additional_m2_similarity=0.00000; baseline_m1=0.00000; additional_min=0.92; additional_separation_from_m1_min=0.18
+current_view_train_decision=insufficient current-view car extent; current_view_m1_similarity=0.00000; current_view_m2_similarity=0.00000
+color_fit_method=reacquiring; color_fit_scale=0.9900; color_fit_shift=6.000,-11.000; color_fit_landmarks=2; color_fit_patch_minimum=0.77182; color_fit_ambiguous=False
+signal_color_display_only=true; color_location=True; color_scene_score=0.90109; color_scene_minimum=0.74; color_decision=reflected-color estimates; M2 left / M1 right; head order not inferred
+M2_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=92/0/0; weights=12.24/0.00/0.00; region={X=0.6315,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+M1_color=RED; decision=dominant color in calibrated track zone; head order unknown; R/G/Y pixels=56/0/0; weights=6.86/0.00/0.00; region={X=0.6647921,Y=0.285608,Width=0.03153982,Height=0.03424528}; obstruction_pixels=0/1458
+Color bar uses experimental user-labeled positions and reflected colors, not verified physical head detections. TEST annotations can add yellow pixels.
+alert=suppressed: unchanged confirmed state; sound=not requested; toast=suppressed: unchanged confirmed state
+Sound requested does not prove audible playback. Sound_enabled=True; Toast_enabled=True
+

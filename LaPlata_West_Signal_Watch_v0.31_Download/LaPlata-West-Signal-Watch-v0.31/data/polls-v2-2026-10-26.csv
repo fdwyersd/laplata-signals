@@ -1,0 +1,15 @@
+utc,mode,state,red_pixels,red_fraction,scene_correlation,area_change,server_modified_utc,reason
+"2026-10-27T02:37:00.4604481Z","LIVE","CHECK IMAGE (1/4)",0,0.00000,0.6959,0.0000,"2026-10-27T02:36:09.0000000Z","Confirming view (1/4). Last confirmed: none.
+Unexpected brightness at night; inspect the camera framing or lighting."
+"2026-10-27T02:38:00.4458791Z","LIVE","SIGNALS ON",89,0.08380,0.9949,0.0000,"2026-10-27T02:37:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:39:00.9173379Z","LIVE","SIGNALS ON",102,0.09605,0.9952,0.0000,"2026-10-27T02:38:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:40:01.2277874Z","LIVE","SIGNALS ON",130,0.07647,0.9955,0.0000,"2026-10-27T02:39:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:41:02.5232933Z","LIVE","SIGNALS ON",304,0.13818,0.7736,0.0000,"2026-10-27T02:40:14.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:41:45.6127579Z","LIVE","SIGNALS ON",273,0.19225,0.8464,0.0000,"2026-10-27T02:41:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:42:34.4675522Z","LIVE","SIGNALS ON",105,0.09887,0.9727,0.0000,"2026-10-27T02:42:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:42:40.0468714Z","LIVE","SIGNALS ON",105,0.09887,0.9727,0.0000,"2026-10-27T02:42:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:42:48.8093725Z","LIVE","SIGNALS ON",105,0.09887,0.9727,0.0000,"2026-10-27T02:42:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:42:55.0187277Z","LIVE","SIGNALS ON",105,0.09887,0.9727,0.0000,"2026-10-27T02:42:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:43:53.3990669Z","LIVE","SIGNALS ON",111,0.08114,0.9959,0.0000,"2026-10-27T02:43:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:44:53.7215171Z","LIVE","SIGNALS ON",96,0.09040,0.9957,0.0000,"2026-10-27T02:44:09.0000000Z","Red rail reflection found in the located west-curve area."
+"2026-10-27T02:45:54.2229776Z","LIVE","SIGNALS ON",109,0.07968,0.9962,0.0000,"2026-10-27T02:45:21.0000000Z","Red rail reflection found in the located west-curve area."
